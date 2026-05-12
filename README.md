@@ -3,6 +3,7 @@
 Script em Python para validar e padronizar dados de endereco da tabela `Enderecos` usando a API do ViaCEP.
 
 O processo:
+
 - le os registros em lote no banco PostgreSQL
 - consulta o CEP no ViaCEP (com retry)
 - usa cache local para evitar consultas repetidas
@@ -17,6 +18,7 @@ O processo:
 - Conexao com internet para consultar o ViaCEP
 
 Dependencias (em `requirements.txt`):
+
 - `psycopg2-binary`
 - `requests`
 - `python-dotenv`
@@ -50,10 +52,12 @@ python main.py
 ## Saidas geradas
 
 Ao final da execucao, o script gera:
+
 - `correcao_enderecos.sql`: arquivo com `BEGIN; ... COMMIT;` e updates
 - `cache_cep.json`: cache local das respostas do ViaCEP
 
 Tambem imprime um resumo com:
+
 - total de registros processados
 - quantidade de ruas problematicas
 - quantidade de divergencias encontradas
